@@ -56,7 +56,7 @@ PMA_PASSWORD: La contraseña para acceder a PhpMyAdmin.
 
 Se configuró la red mariadb_network para conectar los servicios de MariaDB y PhpMyAdmin.
 
-También se asignaron puertos y volúmenes para garantizar la persistencia de datos y el acceso a la base de datos desde la interfaz web de PhpMyAdmin en localhost:8080.
+También se asignaron puertos y volúmenes para garantizar la persistencia de datos y el acceso a la base de datos desde la interfaz web de PhpMyAdmin en `localhost:8080`
 
 # Como implementar el proyecto
 
@@ -72,3 +72,28 @@ docker-compose ps
 
 # Conexión con el cliente
 Si esta usando virtualbox, puede configurar el reenvio de puertos de la siguiente manera:
+
+![alt text](image2.png)
+La imagen muestra la configuración de reglas de reenvío de puertos para PhpMyAdmin:
+
+Nombre: phpmyadmin - Identifica la regla.
+
+Protocolo: TCP - Indica el protocolo utilizado.
+
+Puerto anfitrión: `8080` - Se usará en el anfitrión para acceder a PhpMyAdmin.
+
+Puerto invitado: `8080` - Donde corre PhpMyAdmin en la máquina invitada.
+
+Esta regla redirige el tráfico del puerto 8080 en el host al puerto `8080` en la máquina invitada, facilitando el acceso a PhpMyAdmin.
+
+# Acceder a PhpMyAdmin
+
+Se usará la siguiente dirección para visualizar el interfaz web de PhpMyAdmin:
+```
+http://localhost:8080
+```
+En caso de que al ingresar le solicite credenciales debe ingresar las variables de entorno `PMA_USER` y `PMA_PASSWORD` que asignó en su archivo `.env` para asi ingresar a PhPhpMyAdmin.
+
+![alt text](image3.png)
+
+Por ultimo, cuando pueda ingresar tiene que visualizar de esta manera PhPhpMyAdmin.
