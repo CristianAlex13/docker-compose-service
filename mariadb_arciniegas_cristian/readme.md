@@ -68,7 +68,7 @@ Verifique que los contenedores esten en ejecucion.
 ```
 docker-compose ps
 ```
-![alt text](image.png)
+![alt text](image1.png)
 
 # Conexión con el cliente
 Si esta usando virtualbox, puede configurar el reenvio de puertos de la siguiente manera:
